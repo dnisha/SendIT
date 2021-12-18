@@ -1,0 +1,81 @@
+:root{
+    --main-bg-color:#eff5fe;
+    --border-color:#0288d147;
+}
+
+body,html{
+    font-family: system-ui;
+    background: var(--main-bg-color);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body,.drop-zone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.upload-container{
+    background-color: #ffff;
+    border-radius: 25px;
+    box-shadow: 0px 20px 20px #0000002e;
+}
+.drop-zone{
+    width: 500px;
+    min-height:200px;
+    border: 2px dashed var(--border-color);
+    margin: 30px;
+    border-radius: 10px;
+    transition: all .2s ease;
+}
+.dragged.drop-zone{
+    background:#9190e647 ;
+}
+
+.icon-container{
+    width: 75px;
+
+    position: relative;
+    height: 80px;
+}
+.icon-container img{
+    width: 75px;
+    position: absolute;
+    transition: transform 0.25s ease-in-out;
+    transform-origin: bottom;
+}
+
+.icon-container .left, .right{
+    filter: grayscale(0.5);
+    transform: (0.9);
+}
+
+.icon-container .center{
+    z-index: 2;
+}
+
+.dragged .right{
+    transform: rotate(10deg) translateX(20px) scale(0.9);
+   
+}
+
+.dragged .left{
+    transform: rotate(-10deg) translateX(-20px) scale(0.9);
+}
+
+.dragged .center{
+    transform: translateY(-5px);
+}
+
+#file-input{
+    display: none;
+}
+
+.browsBtn{
+    color: #3a37d1d5;
+    cursor: pointer;
+}
